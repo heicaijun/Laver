@@ -31,68 +31,58 @@ import java.net.URISyntaxException;
 import java.awt.SystemColor;
 import javax.swing.SwingConstants;
 
-public class AboutUSDialog extends JDialog {
+public class AboutUSDialog{
+	private static JPanel buttonPane_1;
 
-	private static final long serialVersionUID = 1L;
-	private final JPanel contentPanel = new JPanel();
-	private JPanel buttonPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void alertDialog(JFrame owner, Component parentComponent) {
-		try {
-			AboutUSDialog dialog = new AboutUSDialog(owner, parentComponent);
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 
 	/**
 	 * Create the dialog.
+	 * @wbp.parser.entryPoint
 	 */
-	public AboutUSDialog(JFrame owner, Component parentComponent) {
-		super(owner, "关于我们", true);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(AboutUSDialog.class.getResource("/images/icons/laver.png")));
-		setBounds(100, 100, 450, 443);
-		setLocationRelativeTo(parentComponent);
-		setResizable(false);
+	public static void alertDialog(JFrame owner, Component parentComponent){
+		
+		final JDialog dialog = new JDialog(owner, "关于我们", true);
+		JPanel contentPanel = new JPanel();
+		dialog.setIconImage(Toolkit.getDefaultToolkit().getImage(AboutUSDialog.class.getResource("/images/icons/laver.png")));
+		dialog.setBounds(100, 100, 457, 453);
+		dialog.setLocationRelativeTo(parentComponent);
+		dialog.setResizable(false);
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		{
-			buttonPane = new JPanel();
-			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
+			buttonPane_1 = new JPanel();
+			buttonPane_1.setLayout(new FlowLayout(FlowLayout.RIGHT));
 			{
 				JButton okButton = new JButton("确定");
 				okButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-						dispose();
+						dialog.dispose();
 					}
 				});
 				okButton.setActionCommand("OK");
-				buttonPane.add(okButton);
-				getRootPane().setDefaultButton(okButton);
+				buttonPane_1.add(okButton);
+				dialog.getRootPane().setDefaultButton(okButton);
 			}
 		}
-		GroupLayout groupLayout = new GroupLayout(getContentPane());
+		GroupLayout groupLayout = new GroupLayout(dialog.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addComponent(contentPanel, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 444, Short.MAX_VALUE)
+				.addComponent(contentPanel, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addComponent(buttonPane, GroupLayout.PREFERRED_SIZE, 434, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap())
+					.addContainerGap()
+					.addComponent(buttonPane_1, GroupLayout.PREFERRED_SIZE, 434, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(11, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addComponent(contentPanel, GroupLayout.PREFERRED_SIZE, 372, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-					.addComponent(buttonPane, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addComponent(buttonPane_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
 		);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setVerticalAlignment(SwingConstants.TOP);
 		lblNewLabel.setIcon(new ImageIcon(AboutUSDialog.class.getResource("/images/icons/LaverTitle.png")));
 		JLabel lblLaver = new JLabel("Laver 1.0");
@@ -156,12 +146,12 @@ public class AboutUSDialog extends JDialog {
 					.addContainerGap(366, Short.MAX_VALUE))
 				.addGroup(gl_contentPanel.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(lblCopyrightc)
-					.addContainerGap(42, Short.MAX_VALUE))
-				.addGroup(gl_contentPanel.createSequentialGroup()
-					.addContainerGap()
 					.addComponent(label)
 					.addContainerGap(346, Short.MAX_VALUE))
+				.addGroup(gl_contentPanel.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 414, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(16, Short.MAX_VALUE))
 				.addGroup(gl_contentPanel.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(gl_contentPanel.createParallelGroup(Alignment.TRAILING)
@@ -169,15 +159,17 @@ public class AboutUSDialog extends JDialog {
 							.addComponent(btnNewButton)
 							.addPreferredGap(ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
 							.addComponent(lblPoweredByHeicaijun)
-							.addPreferredGap(ComponentPlacement.RELATED))
-						.addComponent(scrollPane_1, Alignment.LEADING)
-						.addComponent(scrollPane, Alignment.LEADING))
-					.addGap(20))
+							.addGap(20))
+						.addGroup(gl_contentPanel.createSequentialGroup()
+							.addGroup(gl_contentPanel.createParallelGroup(Alignment.TRAILING)
+								.addComponent(scrollPane_1, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE)
+								.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 420, Short.MAX_VALUE))
+							.addContainerGap())))
 				.addGroup(gl_contentPanel.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 414, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(16, Short.MAX_VALUE))
-				.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
+					.addComponent(lblCopyrightc)
+					.addContainerGap(42, Short.MAX_VALUE))
+				.addComponent(lblNewLabel, GroupLayout.DEFAULT_SIZE, 445, Short.MAX_VALUE)
 		);
 		gl_contentPanel.setVerticalGroup(
 			gl_contentPanel.createParallelGroup(Alignment.LEADING)
@@ -220,6 +212,8 @@ public class AboutUSDialog extends JDialog {
 		txtrgithubissue.setText("本产品系开源项目，如需提供支持可通过github提出Issue，我们将为您解答");
 		scrollPane_1.setViewportView(txtrgithubissue);
 		contentPanel.setLayout(gl_contentPanel);
-		getContentPane().setLayout(groupLayout);
+		dialog.getContentPane().setLayout(groupLayout);
+		dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+		dialog.setVisible(true);
 	}
 }
