@@ -19,7 +19,7 @@ Laver，最初起自Lastest Version，发现两者结合后正好是我喜欢的
 
 # 快速开始
 
-你可以通过git下载可执行的exe文件。下载链接为[http://www.github.com/heicaijun/Laver/release](http://www.github.com/heicaijun/Laver/release)，让我们通过简单的学习开始使用吧！
+你可以通过git下载可执行的exe文件。下载链接为[http://www.github.com/heicaijun/Laver/releases](http://www.github.com/heicaijun/Laver/releases)，让我们通过简单的学习开始使用吧！
 
 ## 基础功能使用
 
@@ -107,4 +107,3 @@ jdk版本至少为1.7，开发工具建议Eclipse，网上教程很多，这里�
 7. 最后点击I Accept 表示接受，并点击Finish即可等待安装完成。
 
 ![image-20200924220827531](http://zone.heicaijun.cn/markdown/image-20200924220827531.png)
-
