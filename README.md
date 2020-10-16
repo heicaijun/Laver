@@ -6,7 +6,7 @@ Laver，最初起自Lastest Version，发现两者结合后正好是我喜欢的
 
 # 功能演示
 
-![功能演示](http://zone.heicaijun.cn/markdown/functions.gif)
+![功能演示](http://zone.heicaijun.cn/markdown/function.gif)
 
 # 功能说明
 
