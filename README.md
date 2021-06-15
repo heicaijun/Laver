@@ -19,7 +19,7 @@ Laver，最初起自Lastest Version，发现两者结合后正好是我喜欢的
 
 # 快速开始
 
-你可以通过git下载可执行的exe文件。下载链接为[http://www.github.com/heicaijun/Laver/releases](http://www.github.com/heicaijun/Laver/releases)，让我们通过简单的学习开始使用吧！
+你可以通过git下载可执行的exe文件。下载链接为[https://www.github.com/heicaijun/Laver/releases](https://www.github.com/heicaijun/Laver/releases)，让我们通过简单的学习开始使用吧！
 
 ## 基础功能使用
 
